@@ -1,10 +1,9 @@
-import 'package:flutter_application_1/splash.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_application_1/splash.dart';
 import 'homepage.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

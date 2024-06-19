@@ -11,14 +11,14 @@ class SplashPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset('images/logo.png', height: 150,),
-            SizedBox(height: 200),
+            Image.asset('images/logo.png', height: 150),
+            const SizedBox(height: 200),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
                 foregroundColor: Colors.white,
-                textStyle: TextStyle(fontSize: 20),
-                fixedSize: Size(300, 50),
+                textStyle: const TextStyle(fontSize: 20),
+                fixedSize: const Size(300, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
@@ -26,7 +26,7 @@ class SplashPage extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacementNamed(context, '/home');
               },
-              child: Text('Get Started'),
+              child: const Text('Get Started'),
             ),
           ],
         ),

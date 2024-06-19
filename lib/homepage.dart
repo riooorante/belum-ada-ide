@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key});
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
         child: AppBar(
           title: const Text('Welcome, User!'),
           actions: [
-            CircleAvatar(
+            const CircleAvatar(
               child: FlutterLogo(size: 20),
             ),
           ],
@@ -20,8 +20,8 @@ class HomePage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(20, 5, 0, 0),
+          const Padding(
+            padding: EdgeInsets.fromLTRB(20, 5, 0, 0),
             child: Text(
               "Guitars",
               style: TextStyle(
@@ -37,12 +37,11 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               child: Row(
                 children: List.generate(
-                  10,
+                  3,
                   (index) => ScrollViewItem(
                     width: 300,
                     height: 400,
-                    imagePath:
-                        'images/${index + 1}.jpg',
+                    imagePath: 'images/${index + 1}.jpg',
                   ),
                 ),
               ),
@@ -81,6 +80,15 @@ class ScrollViewItem extends StatelessWidget {
         child: Image.asset(
           imagePath,
           fit: BoxFit.cover,
+          errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
+            return Container(
+              color: Colors.grey,
+              child: const Icon(
+                Icons.error,
+                color: Colors.red,
+              ),
+            );
+          },
         ),
       ),
     );
